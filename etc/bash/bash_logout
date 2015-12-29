@@ -1,0 +1,14 @@
+
+# ~/.bash_logout: executed by bash(1) when login shell exits.
+
+# Use clear_console if it exists. When leaving the console clear the
+# screen to increase privacy (FROM UBUNTU BASH_LOGOUT).
+if [ "$SHLVL" = 1 ]; then
+   [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
+fi
+
+# On machines without clear_console, the following command should
+# clear the terminal screen upon logout. This prevents other users
+# from easily seeing what I worked on.
+clear
+

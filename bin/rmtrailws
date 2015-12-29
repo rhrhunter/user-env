@@ -1,0 +1,40 @@
+#!/usr/software/bin/perl
+
+use strict; 
+use Getopt::Long; 
+
+my $IN_FILE;
+my $OUT_FILE;
+my $OVERWRITE = 1;
+my $COPY = 0;
+my $HELPME = 0;
+
+my $rc = GetOptions("file=s"  => \$IN_FILE,
+                    "overwrite" => \$OVERWRITE,
+                    "copy"      => \$COPY,
+                    "help"      => \$HELPME);
+if ($HELPME == 1 or $rc == 0 or not defined($IN_FILE)) { 
+    &usage();   
+}
+
+sub usage {
+    print "$0 -file <infile>\n";
+    exit 0;
+}
+
+$OUT_FILE = $IN_FILE . ".tmp";
+
+open (my $in_file, '<', $IN_FILE);
+open (my $out_file,'>', $OUT_FILE);
+
+while(<$in_file>) {
+    my $line = $_;
+    $line =~ s/\s+\n$/\n/;
+    print $out_file $line;
+}
+
+if ($COPY == 1) {
+    `cp $OUT_FILE $IN_FILE`;
+} elsif ($OVERWRITE == 1) {
+    `mv $OUT_FILE $IN_FILE`;
+}

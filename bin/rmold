@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+use strict;
+use FindBin '$Bin';
+use lib ($Bin . "/../lib/perl");
+require RmFiles;
+
+if (scalar(@ARGV) == 0) { 
+    RmFiles::rm_pattern('.', '.*~|#.*#');
+}

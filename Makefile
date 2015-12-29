@@ -25,7 +25,7 @@ copy_bash_files:
 	cp $(BASH_ETC_DIR)/bash_logout $(BASH_FILE_PREFIX)bash_logout
 
 fix_bash_files:
-	sed -E -i .bak -e $(SED_COMMAND) $(BASH_FILE_PREFIX)bash_login
+	sed -E -i.bak -e $(SED_COMMAND) $(BASH_FILE_PREFIX)bash_login
 	rm $(BASH_FILE_PREFIX)bash_login.bak
-	sed -E -i .bak -e $(SED_COMMAND) $(BASH_FILE_PREFIX)bashrc
+	sed -E -i.bak -e $(SED_COMMAND) $(BASH_FILE_PREFIX)bashrc
 	rm $(BASH_FILE_PREFIX)bashrc.bak

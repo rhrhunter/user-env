@@ -3,18 +3,11 @@ To install this user environment, simply do:
 
 * make install
 
-This will overwrite your ~/.bashrc, ~/.bash_login, and
-~/.bash_logout files, so be sure to back them up first.
+This will backup and overwrite your ~/.bashrc, ~/.bash_login, and
+~/.bash_logout files. It will then transfer all the files into ~/.user-env
 
-It will then transfer all the files into ~/.user-env
+To uninstall and restore everything back to its original state, do:
 
-To remove the installation, just restore these files to their original versions:
-* ~/.bashrc 
-* ~/.bash_login 
-* ~/.bash_logout
-   
-Then do:
-
-* make clean
+* make uninstall
 
 

@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+
+use strict;
+use FindBin '$Bin';
+use lib ($Bin . "/../lib/perl");
+use RmFiles;
+
+RmFiles::rm_pattern_rec(".", '.*~|#.*#');

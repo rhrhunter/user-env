@@ -2,5 +2,5 @@ language: bash
 
 script: 
  - make install
- - bash
+ - bash -c "echo Testing123; exit"
  - make uninstall

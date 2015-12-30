@@ -17,9 +17,12 @@ uninstall: restore_bash_files delete_install_dir
 
 backup_bash_files:
 	mkdir -p $(INSTALL_DIR)/backup
+	touch $(BASH_FILE_PREFIX)bash_login
+	touch $(BASH_FILE_PREFIX)bash_logout
+	touch $(BASH_FILE_PREFIX)bashrc
 	cp $(BASH_FILE_PREFIX)bash_login $(INSTALL_DIR)/backup/bash_login
-	cp $(BASH_FILE_PREFIX)bash_logout $(INSTALL_DIR)/backup/bash_logout 
-	cp $(BASH_FILE_PREFIX)bashrc $(INSTALL_DIR)/backup/bashrc 
+	cp $(BASH_FILE_PREFIX)bash_logout $(INSTALL_DIR)/backup/bash_logout
+	cp $(BASH_FILE_PREFIX)bashrc $(INSTALL_DIR)/backup/bashrc
 
 copy_files:
 	mkdir -p $(INSTALL_DIR)

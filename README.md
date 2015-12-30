@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/rhrhunter/user-env.svg?branch=master)](https://travis-ci.org/rhrhunter/user-env)
 
 To install this user environment, simply do:
 

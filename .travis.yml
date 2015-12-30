@@ -1,6 +1,11 @@
 language: bash
 
-script: 
+install:
  - make install
+
+script: 
  - bash -c "echo Testing123"
+ - bash -c "prompt.showdir"
+
+after_script:
  - make uninstall

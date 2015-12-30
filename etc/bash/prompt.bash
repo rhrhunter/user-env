@@ -136,3 +136,6 @@ function prompt.anonymous
 
     PS1="> $TYPING_COLOR"
 }
+
+# prompt selection
+prompt.showdir

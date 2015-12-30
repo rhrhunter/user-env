@@ -1,11 +1,10 @@
 # vars
-
 INSTALL_DIR := ~/.user-env
-BASH_ETC_DIR = $(INSTALL_DIR)/etc/bash
+BASH_ETC_DIR := $(INSTALL_DIR)/etc/bash
 BASH_FILE_PREFIX := ~/.
 SED_REPLACE_FROM := BASH_ETC_DIR
 SED_REPLACE_WITH := $(BASH_ETC_DIR)
-SED_COMMAND = s@$(SED_REPLACE_FROM)@$(SED_REPLACE_WITH)@g
+SED_COMMAND := s@$(SED_REPLACE_FROM)@$(SED_REPLACE_WITH)@g
 
 # copy all files into the install dir
 # backup the original bash files

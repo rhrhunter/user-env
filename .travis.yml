@@ -1,3 +1,7 @@
 language: bash
 
-script: echo "Hello World"
+script: 
+	- make install
+	- bash
+	- make uninstall
+	

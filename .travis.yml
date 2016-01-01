@@ -4,9 +4,7 @@ install:
  - make install
 
 script: 
- - env
- - bash; echo Testing123; exit
- - bash; rmold; echo HelloWorld > foo; rmtrailws foo; rm foo; exit
+ - bash --init-file ~/.bashrc
 
 after_script:
  - make uninstall

@@ -35,3 +35,5 @@ function path.dirs.remove
     return 0
 }
 
+# add the custom user-env bin to the path
+path.dirs.safe_prepend USER_ENV_BIN

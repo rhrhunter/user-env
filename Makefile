@@ -5,6 +5,8 @@ BASH_FILE_PREFIX := ~/.
 SED_REPLACE_FROM := BASH_ETC_DIR
 SED_REPLACE_WITH := $(BASH_ETC_DIR)
 SED_COMMAND := s@$(SED_REPLACE_FROM)@$(SED_REPLACE_WITH)@g
+USER_ENV_BIN := $(INSTALL_DIR)/bin
+SED_USER_ENV_BIN := s@USER_ENV_BIN@$(USER_ENV_BIN)@g
 
 # copy all files into the install dir
 # backup the original bash files
@@ -38,6 +40,8 @@ fix_bash_files:
 	rm $(BASH_FILE_PREFIX)bash_login.bak
 	sed -E -i.bak -e $(SED_COMMAND) $(BASH_FILE_PREFIX)bashrc
 	rm $(BASH_FILE_PREFIX)bashrc.bak
+	sed -E -i.bak $(SED_USER_ENV_BIN) $(BASH_ETC_DIR)/path.bash
+	rm $(BASH_ETC_DIR)/path.bash.bak
 
 restore_bash_files:
 	cp $(INSTALL_DIR)/backup/bash_login $(BASH_FILE_PREFIX)bash_login

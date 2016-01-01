@@ -8,7 +8,7 @@ before_script:
 
 script: 
  - touch foo~
- - if [ -e foo~ ]; then exit 1; fi; 
+ - if [ -e foo~ ]; then false; else true; fi;
  - echo hello > ~/testfile
  - rmtrailws ~/testfile
 

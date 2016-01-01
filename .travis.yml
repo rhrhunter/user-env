@@ -4,7 +4,7 @@ install:
  - make install
 
 script: 
- - bash --init-file ~/.bashrc
+ - . ~/.bashrc
 
 after_script:
  - make uninstall

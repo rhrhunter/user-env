@@ -5,6 +5,9 @@ install:
 
 script: 
  - . ~/.bashrc
+ - rmold
+ - echo hello > ~/testfile
+ - rmtrailws ~/testfile
 
 after_script:
  - make uninstall

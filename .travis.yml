@@ -8,6 +8,7 @@ before_script:
 
 script: 
  - touch foo~
+ - rmold
  - if [ -e foo~ ]; then false; else true; fi;
  - echo hello > ~/testfile
  - rmtrailws ~/testfile

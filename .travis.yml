@@ -5,8 +5,7 @@ install:
 
 script: 
  - bash -c "echo Testing123"
- - rmold
- - echo HelloWorld > foo ; rmtrailws foo ; rm foo
+ - bash -c "rmold; echo HelloWorld > foo ; rmtrailws foo ; rm foo"
 
 after_script:
  - make uninstall

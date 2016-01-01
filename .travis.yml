@@ -3,9 +3,13 @@ language: bash
 install:
  - make install
 
-script: 
+before_script:
  - . ~/.bashrc
+
+script: 
+ - touch foo~
  - rmold
+ - if [ -e foo~ ]; then exit 1; fi; 
  - echo hello > ~/testfile
  - rmtrailws ~/testfile
 

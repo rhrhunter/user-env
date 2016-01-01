@@ -4,8 +4,8 @@ install:
  - make install
 
 script: 
- - bash -c "echo Testing123"
- - bash -c "rmold; echo HelloWorld > foo ; rmtrailws foo ; rm foo"
+ - bash; echo Testing123; exit
+ - bash; rmold; echo HelloWorld > foo; rmtrailws foo; rm foo; exit
 
 after_script:
  - make uninstall

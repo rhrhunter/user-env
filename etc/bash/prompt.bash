@@ -30,19 +30,19 @@ function prompt.baroque
     local USER_COLOR=$CYAN                # color for user name
     local HOST_COLOR=$GREEN              # color for host name
     local WDIR_COLOR=$WHITE             # color for working directory
-    
+
     local PARN_COLOR=$RED               # color for outside of parenthesis
     local TYPING_COLOR=$INPUT_COLOR     # color of user input
-    
+
     local po="$PARN_COLOR["
     local pc="$PARN_COLOR]"
-    
+
     USER_HOST="$USER_COLOR\u$LIGHT_GRAY@$HOST_COLOR\h"
     DATE_TIME="$TIME_COLOR\$(date +%I:%M%P) $DATE_COLOR\$(date +%m/%d/%y)"
-    
+
     LINE1="$po$USER_HOST $DATE_TIME$pc"
     LINE2="$po$WDIR_COLOR\w$pc"
-    
+
     PS1="\n$LINE1 $LINE2 $TYPING_COLOR"
 }
 
@@ -52,16 +52,16 @@ function prompt.simple
 {
     local USER_COLOR=$CYAN               # color for user name
     local HOST_COLOR=$GREEN              # color for host name
-    
+
     local PARN_COLOR=$RED                # color for outside of parenthesis
     local TYPING_COLOR=$INPUT_COLOR      # color of user input
-    
+
     local po="$PARN_COLOR["
     local pc="$PARN_COLOR]"
     local pr="$PARN_COLOR>"
-    
+
     local USER_HOST="$USER_COLOR\u$LIGHT_GRAY@$HOST_COLOR\h"
-    
+
     local LINE="$po$USER_HOST $pr"
 
     PS1="$LINE $TYPING_COLOR"
@@ -74,18 +74,18 @@ function prompt.showdir
     local USER_COLOR=$CYAN              # color for user name
     local HOST_COLOR=$GREEN             # color for host name
     local WDIR_COLOR=$WHITE             # color for working directory
-    
+
     local PARN_COLOR=$RED               # color for outside of parenthesis
     local TYPING_COLOR=$INPUT_COLOR     # color of user input
-    
+
     local po="$PARN_COLOR["
     local pc="$PARN_COLOR]"
     local pr="$PARN_COLOR>"
-    
+
     USER_HOST="$USER_COLOR\u$LIGHT_GRAY@$HOST_COLOR\h"
-    
+
     LINE="$po$USER_HOST $WDIR_COLOR\w $pr"
-    
+
     PS1="$LINE $TYPING_COLOR"
 }
 
@@ -96,18 +96,18 @@ function prompt.gray
     local USER_COLOR=$LIGHT_GRAY        # color for user name
     local HOST_COLOR=$GRAY              # color for host name
     local WDIR_COLOR=$LIGHT_GRAY        # color for working directory
-    
+
     local PARN_COLOR=$WHITE             # color for outside of parenthesis
     local TYPING_COLOR=$INPUT_COLOR     # color of user input
-    
+
     local po="$PARN_COLOR["
     local pc="$PARN_COLOR]"
     local pr="$PARN_COLOR>"
-    
+
     USER_HOST="$USER_COLOR\u$LIGHT_GRAY@$HOST_COLOR\h"
-    
+
     LINE="$po$USER_HOST $WDIR_COLOR\w $pr"
-    
+
     PS1="$LINE $TYPING_COLOR"
 }
 
@@ -120,11 +120,11 @@ function prompt.nocolor
     local po="$PARN_COLOR["
     local pc="$PARN_COLOR]"
     local pr="$PARN_COLOR>"
-    
+
     USER_HOST="$USER_COLOR\u@$HOST_COLOR\h"
-    
+
     LINE="$po$USER_HOST $WDIR_COLOR\w $pr"
-    
+
     PS1="$LINE $TYPING_COLOR"
 }
 
@@ -137,5 +137,24 @@ function prompt.anonymous
     PS1="> $TYPING_COLOR"
 }
 
+function prompt.gitdir {
+    local USER_COLOR=$CYAN              # color for user name
+    local HOST_COLOR=$GREEN             # color for host name
+    local WDIR_COLOR=$WHITE             # color for working directory
+
+    local PARN_COLOR=$RED               # color for outside of parenthesis
+    local TYPING_COLOR=$INPUT_COLOR     # color of user input
+
+    local po="$PARN_COLOR["
+    local pc="$PARN_COLOR]"
+    local pr="$PARN_COLOR>"
+    local gitbranch='$(parse_git_branch)';
+
+    USER_HOST="$USER_COLOR\u$LIGHT_GRAY@$HOST_COLOR\h"
+    LINE="$po$USER_HOST $WDIR_COLOR\w $PURPLE$gitbranch$pr"
+
+    PS1="$LINE $TYPING_COLOR"
+}
+
 # prompt selection
-prompt.showdir
+prompt.gitdir

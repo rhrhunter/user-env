@@ -10,7 +10,7 @@ SED_USER_ENV_BIN := s@USER_ENV_BIN@$(USER_ENV_BIN)@g
 
 # copy all files into the install dir
 # backup the original bash files
-# install bash_login and bash_logout into there destinations
+# install bash_login and bash_logout into their destinations
 # then correct the paths inside the bash files 
 install: copy_files backup_bash_files copy_bash_files fix_bash_files
 

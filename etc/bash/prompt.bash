@@ -146,13 +146,14 @@ function prompt.gitdir {
     local TYPING_COLOR=$INPUT_COLOR     # color of user input
 
     local po="$PARN_COLOR["
-    local pc="$PARN_COLOR]"
     local pr="$PARN_COLOR>"
     local gitbranch='$(parse_git_branch)';
-
+    local purple=$(tput setaf 5)
+    local reset=$(tput sgr0)
+    
     USER_HOST="$USER_COLOR\u$LIGHT_GRAY@$HOST_COLOR\h"
-    LINE="$po$USER_HOST $WDIR_COLOR\w $PURPLE$gitbranch$pr"
 
+    LINE="$po$USER_HOST $WDIR_COLOR\w \[$purple\]$gitbranch\[$reset\]$pr"
     PS1="$LINE $TYPING_COLOR"
 }
 

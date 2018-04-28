@@ -1,13 +1,8 @@
 #!/bin/bash
 
-# Annoying cd typos
-alias cd.="cd ."
-alias cd..="cd .."
+# readme: add your custom aliases in this file
 
-# become root
-alias become_root="sudo su - root";
-
-# Listing files in color
+# listing files in color
 if [ "$TERM" != "dumb" ]; then
     # try to do a color listing
     if ls --color=always >& /dev/null; then
@@ -24,3 +19,15 @@ if [ "$TERM" != "dumb" ]; then
 	fi
     fi
 fi
+
+# convenience 
+alias cd.="cd ."
+alias cd..="cd .."
+alias ll="ls -l"
+alias be_root="sudo su - root";
+
+# docker-ish aliases
+alias drun="docker run"
+alias dbuild="docker build"
+alias k="kubectl"
+

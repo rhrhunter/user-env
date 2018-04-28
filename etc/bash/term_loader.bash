@@ -3,8 +3,7 @@
 DIR=$1
 
 # bash script Loader
-function do_load
-{
+function do_load {
     local script_path=$1;
     local script_desc=$2;
 
@@ -20,3 +19,4 @@ do_load "libpath.bash" "LD_LIBRARY_PATH Management"
 do_load "prompt.bash" "Custom prompt"
 do_load "alias.bash" "Customized aliases"
 do_load "env.bash" "Environment variables"
+do_load "bashsettings.bash" "Configure Bash Environment Settings"
